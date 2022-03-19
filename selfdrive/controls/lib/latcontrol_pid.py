@@ -36,10 +36,10 @@ class LatControlPID(LatControl):
       self.pid.neg_limit = -steers_max
 
       lateral_accel_desired = desired_curvature * CS.vEgo**2
-      lateral_accel_actual = llk.angularVelocityCalibrated.value[0] * CS.vEgo
+      lateral_accel_actual = llk.angularVelocityCalibrated.value[2] * CS.vEgo
 
       # offset does not contribute to resistive torque
-      steer_feedforward = (lateral_accel_desired - 9.81 * llk.orientationNED.value[0])/2.0
+      steer_feedforward = -(lateral_accel_desired - 9.81 * llk.orientationNED.value[0])/2.0
 
       deadzone = 0.0
 
