@@ -105,8 +105,8 @@ def set_lat_tune(tune, name):
       tune.pid.kiV = [0.05]
       tune.pid.kf = 0.00004
     elif name == LatTunes.PID_J:
-      tune.pid.kpV = [0.0]
-      tune.pid.kiV = [0.0]
+      tune.pid.kpV = [1.0]
+      tune.pid.kiV = [0.025]
       tune.pid.kf = 1.0
     elif name == LatTunes.PID_L:
       tune.pid.kpV = [0.3]
